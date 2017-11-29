@@ -11,6 +11,4 @@ Canon.pkg
 
 Log files are saved to: /Volumes/$VOLUME_NAME/logs/
 
-Admin password is stored in file named "credentials.sh"
-
 Must update VOLUME_NAME variable in scripts to where the files are running from

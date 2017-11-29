@@ -4,7 +4,6 @@
 
 VOLUME_NAME=Stealth/Local_Scripts
 echo "$VOLUME_NAME"
-source /Volumes/$VOLUME_NAME/credentials.sh
 
 #clear
 echo "PrintUpdateLocal v6.0"

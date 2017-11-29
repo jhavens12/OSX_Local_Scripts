@@ -1,0 +1,3 @@
+cupsctl WebInterface=yes
+open http://localhost:631
+

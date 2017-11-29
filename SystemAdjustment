@@ -1,10 +1,11 @@
 #!/bin/bash
 
+echo "Administrator Password?"
+read ADMIN_PW
+clear
+
 VOLUME_NAME=Stealth/Local_Scripts
 echo "$VOLUME_NAME"
-source /Volumes/$VOLUME_NAME/credentials.sh
-
-
 
 #Administrator account
 #v3
