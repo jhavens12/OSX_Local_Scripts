@@ -6,6 +6,8 @@ Scripts from location /Volumes/$VOLUME_NAME/
 PPD files are stored in: /Volumes/$VOLUME_NAME/PPD/
 
 Install files (PKG) are stored in: /Volumes/$VOLUME_NAME/PKG/
+Meraki.pkg
+Canon.pkg
 
 Log files are saved to: /Volumes/$VOLUME_NAME/logs/
 
