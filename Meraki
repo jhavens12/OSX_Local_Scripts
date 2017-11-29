@@ -1,0 +1,32 @@
+#JHavens rev 2.0.0
+#!/bin/bash
+
+VOLUME_NAME=Stealth/Local_Scripts
+echo "$VOLUME_NAME"
+
+#Rewritten for local running
+
+clear
+echo "Meraki Local v2.0.0"
+
+echo "Connected to"
+scutil --get ComputerName
+stat -f '%Su' /dev/console
+system_profiler SPHardwareDataType | awk '/Serial/ {print $4}'
+echo "Loading..."
+
+read -p "Do you wish to continue? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+
+echo
+
+
+sudo installer -allowUntrusted -pkg /Volumes/$VOLUME_NAME/PKG/Meraki.pkg -target /
+
+
+echo
+echo "Script Complete"
+
+fi

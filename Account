@@ -1,0 +1,29 @@
+#!/bin/bash
+
+VOLUME_NAME=Stealth/Local_Scripts
+echo "$VOLUME_NAME"
+source /Volumes/$VOLUME_NAME/credentials.sh
+
+#v1.0
+#Administrator account
+ADMIN=administrator
+DIRECTORY="/Users/Administrator"
+MACHINE=$(scutil --get ComputerName)
+DATE=$(date +%Y-%m-%d_%H-%M)
+RESTART=$(date +%y%m%d2300)
+
+
+#if id "$ADMIN" >/dev/null 2>&1; then
+if [ -d "$DIRECTORY" ]; then
+        echo "$DIRECTORY exists"
+        sudo dscl . -passwd /Users/administrator $ADMIN_PW
+else
+        echo "user does not exist"
+        sudo dscl . -create /Users/administrator
+        sudo dscl . -create /Users/administrator UserShell /bin/bash
+        sudo dscl . -create /Users/administrator RealName "Administrator"
+        sudo dscl . -create /Users/administrator NFSHomeDirectory /Users/administrator
+        sudo dscl . -passwd /Users/administrator $ADMIN_PW
+        sudo dscl . -append /Groups/admin GroupMembership administrator
+        sudo shutdown -r $RESTART
+fi
